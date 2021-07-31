@@ -1,15 +1,53 @@
 \section{Motivation and Problem Definition}
 \label{sec:motivation}
 
-X-ray computed tomography is a widely used imaging technique in the healthcare domain, largely because of its ability to provide a detailed insight into the human body noninvasively. Computed tomography technology is not only used for diagnostic purposes in radiology but also has been utilized in many industrial applications. One of the examples of CT application in industry is the detection of flaws (e.g. voids, cracks) in materials~\cite{dcksw:14}. The technology has also been adopted for manufacturing metrology and quality testing of complex assemblies~\cite{wk:13}. Reverse engineering is another important field in which CT scanning has found  applications~\cite{bss:19}. 
+X-ray computed tomography is a widely used imaging technique in the healthcare domain, 
+largely because of its ability to provide a detailed insight into the human body noninvasively. 
+Computed tomography technology is not only used for diagnostic purposes in radiology 
+but also has been utilized in many industrial applications. One of the examples of CT application in industry is 
+the detection of flaws (e.g. voids, cracks) in materials~\cite{dcksw:14}. 
+The technology has also been adopted for manufacturing metrology and quality testing of complex assemblies~\cite{wk:13}. 
+Reverse engineering is another important field in which CT scanning has found  applications~\cite{bss:19}. 
 
-Being a non-destructive technology, X-ray CT has also been widely used in various geological fields. Application areas range from rock and soil mechanics to petroleum geology~\cite{msvj:03}. Imaging 3D geometry of the mineral phase and the pore-space of reservoir rock at the pore scale is very useful in revealing the internal structure of the rock. Especially in digital rock physics (DRP) applications, high resolution digital images of porous media enable us to quantify some of the important rock properties such as porosity, permeability and resistivity with the help of numerical simulations. Numerical simulation of fluid flow based on high-resolution tomographic images of rock and prediction of permeability are presented in~\cite{mbb:12,bbdgimpp:13}.   
+Being a non-destructive technology, X-ray CT has also been widely used in various geological fields. 
+Application areas range from rock and soil mechanics to petroleum geology~\cite{msvj:03}. 
+Imaging 3D geometry of the mineral phase and the pore-space of reservoir rock at the pore scale 
+is very useful in revealing the internal structure of the rock. Especially in digital 
+rock physics (DRP) applications, high resolution digital images of porous media enable us to 
+quantify some of the important rock properties such as porosity, permeability and resistivity 
+with the help of numerical simulations. Numerical simulation of fluid flow based on 
+high-resolution tomographic images of rock and prediction of permeability are presented in~\cite{mbb:12,bbdgimpp:13}.   
 
-The quality, resolution, and size of CT scans are of utmost importance when it comes to measuring the upscaled rock properties accurately. For higher resolution scans, X-ray micro-computed tomography (micro-CT) has been extensively benefited in the area of DRP~\cite{acdghkkklmmmsssrwz:13}. Contrary to conventional CT, micro-CT can provide images with a voxel resolution as small as a few micrometers in size. There is a trade-off between the resolution of the image and the physical size of the sample being investigated. The higher the resolution of the scan, the smaller the size of the core sample~\cite{bgikkllr:17}. Finer resolution helps detect some details such as grain shapes and roughness, whereas the size of the sample should be large enough to be representative for a particular rock property. Image quality is another crucial factor that affects the accuracy of the properties estimated from CT data. There are many different artifacts that can deteriorate CT image quality. These artifacts include noise, beam hardening, motion blur, ring and metal artifacts, to name a few~\cite{bf:12}. 
+The quality, resolution, and size of CT scans are of utmost importance when it comes to 
+measuring the upscaled rock properties accurately. For higher resolution scans, 
+X-ray micro-computed tomography (micro-CT) has been extensively benefited in the area of 
+DRP~\cite{acdghkkklmmmsssrwz:13}. Contrary to conventional CT, micro-CT can provide 
+images with a voxel resolution as small as a few micrometers in size. 
+There is a trade-off between the resolution of the image and the physical size of the sample being investigated. 
+The higher the resolution of the scan, the smaller the size of the core sample~\cite{bgikkllr:17}. 
+Finer resolution helps detect some details such as grain shapes and roughness, 
+whereas the size of the sample should be large enough to be representative for a 
+particular rock property. Image quality is another crucial factor that affects 
+the accuracy of the properties estimated from CT data. 
+There are many different artifacts that can deteriorate CT image quality. 
+These artifacts include noise, beam hardening, motion blur, ring and metal artifacts, to name a few~\cite{bf:12}. 
 
-Increasing X-ray exposure time at each projection view would lead to longer imaging time and higher radiation dose, thus giving rise to better image quality~\cite{hbeksrrp:12}. In medical domain, minimizing the associated radiation dose is especially important as it may have a negative impact on patient's health. When it comes to geoscience applications, however, the radiation dose is not an issue. Nevertheless, high-density components of geomaterials cause more attenuation of X-rays, so higher exposure time is required to obtain high-quality images. This necessitates prolonged acquisition times causing a serious problem when certain processes happening too fast are to be monitored. For example, in high-temperature experiments, the reaction occurs rapidly because increasing the temperature speeds up the process exponentially~\cite{glck:18}. These types of experiments require low exposure times in order to be captured effectively. Especially, in micro-CT technologies, the restriction of prolonged acquisition times becomes more apparent as the time for completion of the scan may take several hours. 
+Increasing X-ray exposure time at each projection view would lead to longer imaging time and higher radiation dose, 
+thus giving rise to better image quality~\cite{hbeksrrp:12}. In medical domain, minimizing the associated 
+radiation dose is especially important as it may have a negative impact on patient's health. 
+When it comes to geoscience applications, however, the radiation dose is not an issue. 
+Nevertheless, high-density components of geomaterials cause more attenuation of X-rays, so 
+higher exposure time is required to obtain high-quality images. This necessitates prolonged 
+acquisition times causing a serious problem when certain processes happening too fast are to 
+be monitored. For example, in high-temperature experiments, the reaction occurs rapidly because 
+increasing the temperature speeds up the process exponentially~\cite{glck:18}. 
+These types of experiments require low exposure times in order to be captured effectively. 
+Especially, in micro-CT technologies, the restriction of prolonged acquisition times becomes 
+more apparent as the time for completion of the scan may take several hours. 
 
-In the medical domain, the application of deep convolutional neural networks has shown a great success in reducing the noise level in low-dose CT (LDCT) images, thus minimizing patient radiation exposure while preserving image quality and diagnostic power~\cite{yyzw19,czklclzw17}.
+In the medical domain, the application of deep convolutional neural networks has shown a great success in 
+reducing the noise level in low-dose CT (LDCT) images, thus minimizing patient radiation 
+exposure while preserving image quality and diagnostic power~\cite{yyzw19,czklclzw17}.
 
 
 
