@@ -1,0 +1,67 @@
+\chapter{BACKGROUND INFORMATION}
+\label{chap:intro2}
+
+Mathematical epidemiology provides a way to understand the foundational structures that effect the spread of diseases and control strategies to prevent the spreading of diseases. Thus, mathematical epidemiology gains great importance as a possible tool for dealing with diseases, specially with the infectious ones.
+See~\cite{md:95, ra:11}.
+
+We investigate some of the algorithm proposed to solve the generalized birthday problem ($k$-list) and its equivalent problems in integer domains like subset sum problems and shortest lattice vector problem. We discussed the general solution to the problem and their complexities. As the problem has NP-complete complexity proposing the solution for the total system seems unlikely so, each algorithm suggest the solution by bounding parameters or the size of the list due to requirements of the applications. 
+The comparison between the general, dense and sparse cases are in \tabref{tab:Table.1} compares the polynomial solving methods in terms of memory complexity. It concludes that the eXtended Lireaization uses very less memory than the other ones and among new approaches $sl$ algorithm is very memory friendly algorithm. 
+
+
+\begin{table}[!h]
+\caption{Polynomial System Solving Algorithms Complexity\label{tab:Table.1_2}}
+\centering
+\begin{tabular}{|l|r|}
+\hline
+PoSSo Algorithm & complexity \\ \hline
+F4 & $\lceil \log q \rceil \left( \begin{array}{c       }
+n+ d_{reg} - 1\\
+d_{reg
+}
+
+\end{array} 
+\right)^ 2$\\ \hline
+F5 & $O \left( m. \left( \begin{array}{c}
+n +d_{reg} - 1\\
+d_{reg}
+
+\end{array} 
+\right) \right) ^ {w} $\\ \hline
+
+XL algorithm & $\lceil \log q \rceil \left( \begin{array}{c     }
+n + D + 1\\
+D + 2
+\end{array} 
+\right)^ {2}$  \\ \hline
+Hybrid F5 & $O \left( \big( m.  \big(  \begin{array}{c}
+n + d_{reg} - 1\\
+d_{reg} 
+\end{array}  \big) \big)^ {2}
+\right) $\\ \hline
+Small linearization & $O \left( \big(  \begin{array}{c}
+n + D - 1\\
+D 
+\end{array} \big) 
+\right)^ {w} $\\
+\hline
+\end{tabular}
+\end{table}
+
+The XL algorithm needs less memory than upper bound for $F4$ algorithm.
+Among new methods $sl$ algorithm is the most memory friendly algorithm. In short, we can say
+\begin{displaymath}
+        \mathrm{Small~Linearization} \geq \mathrm{XL~algorithm} \geq \mathrm{HYbrid~F5} \geq \mathrm{F5algorithm} \geq \mathrm{F4}.
+\end{displaymath}
+
+Here is a listing.
+
+% try several options. 
+\begin{listing}
+  %\VerbListingBoxed{myMatlabCode.m}
+  \VerbatimInput{myMatlabCode.m}
+	%\inputminted{matlab}{myMatlabCode.m} % only if minted is used!
+  %\VerbListing{myMatlabCode.m}
+\caption{The \texttt{lintest} function in a floating ``Listing'' environment.}
+\label{mfile:linetest-2}
+\end{listing}
+

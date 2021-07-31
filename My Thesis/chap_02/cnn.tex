@@ -1,0 +1,121 @@
+\section{Convolutional Neural Networks}
+\label{sec:cnn}
+
+Convolutional neural networks (CNNs), developed by LeCun et al.~\cite{lbdhhhj:89} in the 1980s, are a specialized class of deep neural networks. They are commonly used in processing data that has a grid-like topology, such as images~\cite{gbc:16}. As the name “convolutional” indicates, these types of neural networks use a linear mathematical operation called \emph{convolution} which is extensively employed in signal and image processing. In mathematics, convolution can be considered as an operation on two functions producing another function such as:
+\begin{align}
+h(t) = (f*g)(t) = \int_{-\infty}^{\infty} f(\tau) \,g(t-\tau) \,d\tau.
+\label{eq:convolution_integral}
+\end{align} 
+Here, $f$ and $g$ are two real-valued functions of $\tau$ and $t$ is a fixed parameter. The symbol $*$ denotes the convolution operation that is defined as the integral of the product of the two functions, namely $f(\tau)$ and $g(t-\tau)$ which is a reversed version of $g(\tau)$ that has been shifted by an amount $t$. The resulting output function is represented as $h(t)$. In the realm of machine learning, the function $f$ and $g$ are often called as the \emph{input} and \emph{kernel}, respectively. The function $h$, on the other hand, is referred to as the \emph{feature map}. 
+
+CNN based applications usually use multidimensional arrays of data. For example, a grayscale image can be considered as a two-dimensional array of data consisting of integer values, each representing the intensity value of the corresponding pixel. Thus, writing the discrete form of the convolution operation would be more appropriate for this case. For a given two-dimensional input image $I$ and a two-dimensional kernel $K$, Equation \eqref{eq:convolution_integral} can be written as:
+
+\begin{align}
+F(i,j)=(I*K)(i,j)=\sum_{a}\sum_{b} I(a,b)K(i-a,i-b).
+\label{eq:discrete_convolution_2d}
+\end{align} 
+Here, $F$ represents the output feature map. The commutative property of the convolution operation allows us to write Equation \eqref{eq:discrete_convolution_2d} in the form of:
+
+\begin{align}
+F(i,j)=(K*I)(i,j)=\sum_{a}\sum_{b} I(i-a,i-b)K(a,b).
+\label{eq:discrete_convolution_2d_alternate}
+\end{align} 
+
+The indices $i$ and $j$ are related to the input image $I$, whereas the indices $a$ and $b$ are related to the kernel $K$. In many machine learning applications, an operation called \emph{cross-correlation} that does not require flipping the kernel, as opposed to convolution, is used:
+
+\begin{align}
+F(i,j)=(I*K)(i,j)=\sum_{a}\sum_{b} I(i+a,i+b)K(a,b).
+\label{eq:cross_correlation}
+\end{align} 
+
+Although cross-correlation differs from convolution in a mathematical sense as described above, it is conventionally called convolution in CNN based applications. A visual example of the convolution operation applied to a two-dimensional image is given in \figref{fig:imageconv}.
+
+\subsection{}
+
+
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figures/chap_02_cnn/convolution} 
+\caption{An illustration of a convolution operation applied to a given two-dimensional input image. The $3\times3$ kernel shifts over the $5\times5$ input image, producing each pixel of the feature map. }
+\label{fig:imageconv}
+\end{figure}
+
+
+In this part, we introduce an epidemic model which is called the
+vector-host model and apply the theory given within this chapter
+to analyze its dynamics. 
+First, let us present the vector-host model: in this context, a
+\emph{vector} may be regarded as a \emph{carrier}, as in the situation
+that an animal which transfers an infective agent from one host to
+another.  
+A host is an organism that harbors or nourishes another organism. As
+we study epidemic diseases,  we consider the modelling of the dengue
+fever which is an infectious disease of the tropics transmitted by
+mosquitos and characterized by rash and aching head and joints. 
+
+
+\subsection{An analysis on Dengue Fever}
+
+Now, we formulate the dynamics of the disease transmisson model of
+Dengue Fever as a coupled system of ordinary differential equations 
+\[ %\begin{align*}
+\left(\frac{\partial \sV_i}{\partial
+    x_j}\right)(x^0)=\begin{pmatrix}b+\gamma & 0\\0&c\end{pmatrix},
+\quad  
+\left(\frac{\partial \sF_i}{\partial x_j}\right)(x^0)
+= \begin{pmatrix}0&\beta_s\\ \beta_m&0\end{pmatrix}
+\] %\end{align*} 
+for any  $1\leq i,j\leq 2$.
+
+\begin{figure}
+        \centering
+        \begin{subfigure}[b]{.5\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{figures/figuresautonomous/figures1/birth_recovery} 
+                \caption{}
+                \label{fig:sum}
+        \end{subfigure}%
+        %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{.5\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{figures/figuresautonomous/figures1/beta_s}
+                \caption{}
+                \label{fig:betas}
+        \end{subfigure}
+        \caption{The change of $R_0$ as (a) $b+\gamma$, (b) $\beta_s$ varies.}
+        \label{fig:birth}
+\end{figure}
+
+From  \figref{fig:sum}, it is clear that $R_0$ decreases as the sum $b+\gamma$ increases. 
+In other words, an increase of the birth and/or the recovery rate of the host leads to diminishing of the disease.
+
+It is also apparent in \figref{fig:betas} that $R_0$ increases provided that $\beta_s$ (or $\beta_m$) increases.
+ That is, an increment of any contact rates causes the spread of the disease. 
+
+These two observations indicate that the method considered is consistent with the natural phenomena of this particular infectious disease and is suitable for other diseases which have similar transmission way in population.
+
+
+\subsection{An Analysis on Pest Control for Dengue Fever}
+
+After analyzing dynamics of dengue fever, it is reasonable to seek a
+way to control of the disease in some way. 
+Since there has not been developed a vaccine for the dengue virus,
+pest control on the vectors can be studied as an eradication policy. 
+with and without the pest control. 
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth]{figures/figuresautonomous/figures2/pestcontrol} 
+\caption{The change of $R_0$ with pest control as $d$ varies.}
+\label{fig:pest}
+\end{figure}
+
+
+Thus, as another additional piece to the work of Watmough and
+Driessche~\cite{dw:02}, we model the dynamics of dengue fever with
+pest control and compare the basic reproduction ratio for the systems
+with and without the pest control.
+
+
